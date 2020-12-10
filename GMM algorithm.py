@@ -63,7 +63,7 @@ def GMM(data,K):
         Q[count] = np.sum(
             [np.log(np.sum([pi[k] * stats.multivariate_normal.pdf(data[n],mu[k],sigma[k]+0.00001*np.identity(dim)) for k in range(K)])) for n in range(N)]);
         print(count)
-        if count>50:
+        if count>200:
             break;
         count=count+1;
     return(pi,mu,sigma,Q)
